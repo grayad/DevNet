@@ -13,11 +13,6 @@ const resolvers = {
 
       return user;
     },
-    // updateUser: async(parent, args) => {
-    //     let updatedUser = await User.findByIdAndUpdate(
-
-    //     )
-    // }
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -34,6 +29,12 @@ const resolvers = {
       return user;
     },
   },
+  // implement authentication with JWT first
+  // updateUser: async(parent, args) => {
+  //     let updatedUser = await User.findByIdAndUpdate(
+
+  //     )
+  // },
 };
 
 module.exports = resolvers;
