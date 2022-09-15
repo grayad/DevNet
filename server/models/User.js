@@ -25,11 +25,8 @@ const userSchema = new Schema(
     },
     bio: {
       type: String,
-      required: true,
     },
-    skills: {
-      type: [String],
-    },
+    skills: [],
   },
   // set this to use virtual below
   {
