@@ -19,12 +19,14 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
+      minlength: 5
     },
     title: {
       type: String,
     },
     bio: {
       type: String,
+      maxlength: 280,
     },
     skills: [],
   },
