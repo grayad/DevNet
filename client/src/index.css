@@ -1,13 +1,71 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
+:root{
+  --background-color: #222222;
+  --primary-color: #FFFFFF;
+  --secondary-color: #62daff;
+  --tertiary-color: #95A3B3;
+  --quaternary-color: #424242;
+  --font1: montserrat, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+main {
+  color: var(--primary-color);
+  font-family: montserrat, sans-serif;
+  background-color: var(--background-color);
+  height: 100vh;
+}
+
+h1 {
+  padding-top: 45px;
+}
+/* CARDS */
+.card {
+  margin: 0 0 20px 0;
+  border: 3px solid var(--secondary-color);
+  border-radius: var(--secondary-color);
+  background-color: var(--tertiary-color);
+  color: var(--quaternary-color);
+}
+
+.card-header {
+  color: var(--primary-color);
+  margin: 0;
+  background-color: var(--secondary-color);
+  padding: 0.625rem;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.card-body {
+  padding: 2.5%;
+  font-size: 1.4rem;
+  background-color: var(--tertiary-color);
+}
+
+/* FORM */
+.form-label,
+.form-input,
+.form-textarea {
+  display: block;
+}
+
+.form-label {
+  font-size: 1.2rem;
+  margin: 0.625rem 0 0.25rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.2rem 0;
+  font-size: 1.2rem;
+  border: 2px solid var(--dark);
+  border-radius: var(--border-radius);
 }
