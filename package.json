@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/grayad/DevNet#readme",
   "dependencies": {
-    "concurrently": "^7.4.0"
+    "bootstrap": "^5.2.1",
+    "concurrently": "^7.4.0",
+    "react-bootstrap": "^2.5.0"
   }
 }
