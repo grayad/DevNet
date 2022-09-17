@@ -7,7 +7,6 @@ export const QUERY_ME = gql`
       username
       email
       skill
-      biography
       connectionCount
       connections {
         _id
