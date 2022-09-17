@@ -6,14 +6,31 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      savedBooks {
-        bookId
-        authors
-        description
-        image
-        link
-        title
+      skill
+      biography
+      connectionCount
+      connections {
+        _id
+        username
       }
     }
   }
 `;
+
+export const QUERY_USER = gql`
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      skills
+      biography
+      connectionCount
+      connections {
+        _id
+        username
+      }
+    }
+  }
+`;
+
