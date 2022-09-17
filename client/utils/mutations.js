@@ -31,3 +31,17 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const UPDATE_USER = gql`
+  mutation updateUser($title: String, $bio: String, $skills: [String]) {
+    updateUser(title: $title, bio: $bio, skills: $skills) {
+      _id
+      username
+      email
+      type
+      title
+      bio
+      skills
+    }
+  }
+`;

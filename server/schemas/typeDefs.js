@@ -14,10 +14,6 @@ const typeDefs = gql`
   }
 
   input profileInput {
-    _id: ID
-    username: String
-    email: String
-    type: String
     title: String
     bio: String
     skills: [String]
@@ -37,7 +33,7 @@ const typeDefs = gql`
       type: String!
     ): Auth
     login(email: String!, password: String!): Auth
-    updateUser(input: profileInput!): User
+    updateUser(title: String, bio: String, skills: [String]): User
   }
 
   type Auth {

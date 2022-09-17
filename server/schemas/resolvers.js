@@ -44,13 +44,23 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    updateUser: async (parent, args, context) => {
+      console.log(context);
+      // check for token
+      if (context.user) {
+        console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>");
+        console.log(args);
+        let updatedUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { title: args.title, bio: args.bio, skills: args.skills},
+          { new: true }
+        );
+        return updatedUser;
+      }
+      // if no token, user needs to login
+      throw new AuthenticationError("Please log in or create an account!");
+    },
   },
-  // implement authentication with JWT first
-  // updateUser: async(parent, args) => {
-  //     let updatedUser = await User.findByIdAndUpdate(
-
-  //     )
-  // },
 };
 
 module.exports = resolvers;
