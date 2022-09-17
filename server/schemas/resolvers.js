@@ -45,11 +45,8 @@ const resolvers = {
       return { token, user };
     },
     updateUser: async (parent, args, context) => {
-      console.log(context);
       // check for token
       if (context.user) {
-        console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>");
-        console.log(args);
         let updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { title: args.title, bio: args.bio, skills: args.skills},
