@@ -24,3 +24,17 @@ export const QUERY_USERS = gql`
     }
   }
 `;
+
+export const QUERY_SINGLEUSER = gql`
+  query getSingleUser($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      type
+      title
+      bio
+      skills
+    }
+  }
+`;
