@@ -41,7 +41,7 @@ const Signup = () => {
 
   return (
 		<main className="login">
-            <h1 class="text-center">Welcome to DevNet</h1>
+            <h1 className="text-center">Welcome to DevNet</h1>
             <div className="col-12 col-md-6 mx-auto py-4">
                 <div className="card">
                     <h4 className="card-header">Sign-Up</h4>
@@ -74,35 +74,35 @@ const Signup = () => {
                                 value={userFormData.password}
                                 onChange={handleChange}
                             />
-                            <h2 class="text-center"> Are you a Developer or a Company?</h2>
-                            <div class="form-check">
+                            <h2 className="text-center"> Are you a Developer or a Company?</h2>
+                            <div className="form-check">
                                 <input
-                                    class="form-check-input"
+                                    className="form-check-input"
                                     type="radio"
                                     name="radio"
                                     id="devRadio"
                                     value={userFormData.radio}
                                     onChange={handleChange}>
                                 </input>
-                                <label class="form-check-label" for="devRadio">
+                                <label className="form-check-label" for="devRadio">
                                 Developer
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input
-                                    class="form-check-input"
+                                    className="form-check-input"
                                     type="radio"
                                     name="radio"
                                     id="compRadio"
                                     value={userFormData.radio}
                                     onChange={handleChange}>
                                 </input>
-                                <label class="form-check-label" for="compRadio">
+                                <label className="form-check-label" for="compRadio">
                                 Company
                                 </label>
                             </div>
                             <div class="text-center py-3">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" className="btn btn-primary">Submit</button>
                             </div>
                             {error && <div>Signup failed</div>}
                         </form>

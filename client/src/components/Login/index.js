@@ -4,7 +4,7 @@ import React from "react";
 const Login = () => {
   return (
 		<main className='login'>
-            <h1 class="text-center">Welcome to DevNet</h1>
+            <h1 className="text-center">Welcome to DevNet</h1>
             <div className="col-12 col-md-6 mx-auto py-4">
                 <div className="card">
                     <h4 className="card-header">Sign-Up</h4>
@@ -25,8 +25,8 @@ const Login = () => {
                             id="password"
                         />
                         </form>
-                        <div class="text-center py-3">
-                            <button type="submit" class="btn btn-primary btn-dark">Submit</button>
+                        <div className="text-center py-3">
+                            <button type="submit" className="btn btn-primary btn-dark">Submit</button>
                         </div>
                     </div>
                 </div>
