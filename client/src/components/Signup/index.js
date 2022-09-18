@@ -3,7 +3,6 @@ import React from "react";
 const Signup = () => {
   return (
 		<main className="login">
-            <img src={process.env.PUBLIC_URL+"/devenetlogo.jpg"} alt="logo"/>
             <h1 class="text-center">Welcome to DevNet</h1>
             <div className="col-12 col-md-6 mx-auto py-4">
                 <div className="card">
