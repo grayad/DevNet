@@ -1,11 +1,11 @@
 import React from "react";
 
-import Signup from "./components/Signup";
 
 // import Auth from "./utils/auth";
 
 // pages and components
 import Header from "./components/Header";
+import Signup from "./components/Signup";
 import Login from "./components/Login";
 // import Developers from "../pages/Developers";
 // import Jobs from "../pages/Jobs";
@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-      <Signup />
+      <Signup></Signup>
       <Login></Login>
     </div>
   );
