@@ -5,7 +5,7 @@ const Login = () => {
   return (
 		<main className='login'>
             <h1 class="text-center">Welcome to DevNet</h1>
-            <div className="col-12 col-md-6 mx-auto">
+            <div className="col-12 col-md-6 mx-auto py-4">
                 <div className="card">
                     <h4 className="card-header">Sign-Up</h4>
                     <div className="card-body">
@@ -16,7 +16,6 @@ const Login = () => {
                             name="email"
                             type="email"
                             id="email"
-
                         />
                         <input
                             className="form-input"
@@ -26,7 +25,7 @@ const Login = () => {
                             id="password"
                         />
                         </form>
-                        <div class="text-center">
+                        <div class="text-center py-3">
                             <button type="submit" class="btn btn-primary btn-dark">Submit</button>
                         </div>
                     </div>
