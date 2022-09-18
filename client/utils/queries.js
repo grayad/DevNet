@@ -6,30 +6,35 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      skill
-      connectionCount
-      connections {
-        _id
-        username
-      }
+      type
     }
   }
 `;
 
-export const QUERY_USER = gql`
-  query user($username: String!) {
+export const QUERY_USERS = gql`
+  query {
+    users {
+      _id
+      username
+      email
+      type
+      title
+      bio
+      skills
+    }
+  }
+`;
+
+export const QUERY_SINGLEUSER = gql`
+  query getSingleUser($username: String!) {
     user(username: $username) {
       _id
       username
       email
+      type
+      title
+      bio
       skills
-      biography
-      connectionCount
-      connections {
-        _id
-        username
-      }
     }
   }
 `;
-
