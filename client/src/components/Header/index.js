@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-// pages and components
+// nav
 import Nav from "../Nav";
-import Developers from "../pages/Developers";
-import Jobs from "../pages/Jobs";
-import Profile from "../pages/Profile";
-import Login from "../Login";
 
 export default function Header() {
-  
-
-
+  return (
+    <>
+      <header className="d-flex align-items-center justify-content-between p-1">
+        <h1 aref="/">DevNet</h1>
+        <Nav></Nav>
+      </header>
+    </>
+  );
 }
