@@ -1,6 +1,6 @@
 import React from "react";
 
-import Auth from "./utils/auth";
+// import Auth from "./utils/auth";
 
 // pages and components
 import Header from "./components/Header";
@@ -11,10 +11,17 @@ import Login from "./components/Login";
 // import Login from "../Login";
 
 function App() {
+  // once signup/login page complete
   // get token
-  const token = Auth.loggedIn() ? Auth.getToken() : null;
+  // const token = Auth.loggedIn() ? Auth.getToken() : null;
+  // return <div>{!token ? <Login /> : <Header></Header>}</div>;
 
-  return <div>{!token ? <Login /> : <Header></Header>}</div>;
+  return (
+    <div>
+      <Header></Header>
+      <Login></Login>
+    </div>
+  );
 }
 
 export default App;
