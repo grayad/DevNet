@@ -22,6 +22,8 @@ const Signup = () => {
       ...userFormData,
       [name]: value,
     });
+
+    console.log(userFormData)
   };
 
   // submit form
@@ -81,7 +83,7 @@ const Signup = () => {
                                     type="radio"
                                     name="radio"
                                     id="devRadio"
-                                    value={userFormData.radio}
+                                    value="Developer"
                                     onChange={handleChange}>
                                 </input>
                                 <label className="form-check-label" for="devRadio">
@@ -94,7 +96,7 @@ const Signup = () => {
                                     type="radio"
                                     name="radio"
                                     id="compRadio"
-                                    value={userFormData.radio}
+                                    value="Company"
                                     onChange={handleChange}>
                                 </input>
                                 <label className="form-check-label" for="compRadio">
