@@ -3,7 +3,7 @@
 :root{
   --background-color: #222222;
   --primary-color: #FFFFFF;
-  --secondary-color: #62daff;
+  --secondary-color: #44d3ff;
   --tertiary-color: #95A3B3;
   --quaternary-color: #424242;
   --font1: montserrat, sans-serif;
@@ -13,6 +13,15 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+}
+
+header {
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+}
+
+.nav .nav-item .nav-link {
+  color: var(--secondary-color);
 }
 
 main {
@@ -67,4 +76,12 @@ h1 {
   font-size: 1.2rem;
   border: 2px solid var(--dark);
   border-radius: var(--border-radius);
+}
+
+.navbar-brand {
+  position: relative;
+  background: url(../public/devnetlogo.jpg);
+  width: 100px;
+  left: 15px;
+  background-size: contain;
 }
