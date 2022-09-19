@@ -5,7 +5,7 @@ const pageNames = ["Jobs", "Developers", "Profile", "Logout"];
 function Nav() {
   return (
     <nav>
-      <ul className="nav list-unstyled">
+      <ul className="nav list-unstyled nav-pills">
         {pageNames.map((name) => {
           return (
             <li className="nav-item">
