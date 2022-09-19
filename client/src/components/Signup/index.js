@@ -104,7 +104,7 @@ const Signup = () => {
                                 </label>
                             </div>
                             <div class="text-center py-3">
-                                <button type="submit" className="btn btn-primary">Submit</button>
+                                <button type="submit" className="btn btn-primary btn-dark">Submit</button>
                             </div>
                             {error && <div>Signup failed</div>}
                         </form>
