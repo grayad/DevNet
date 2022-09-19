@@ -10,6 +10,7 @@ import {
 
 // pages and components
 import Header from "./components/Header";
+import Signup from "./components/Signup";
 import Login from "./components/Login";
 // import Developers from "../pages/Developers";
 // import Jobs from "../pages/Jobs";
@@ -34,7 +35,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <Login />
+        <Header></Header>
+        <Signup></Signup>
+        <Login></Login>
       </div>
     </ApolloProvider>
   );

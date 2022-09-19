@@ -1,18 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 :root{
   --background-color: #222222;
   --primary-color: #FFFFFF;
   --secondary-color: #44d3ff;
   --tertiary-color: #95A3B3;
   --quaternary-color: #424242;
-  --font1: montserrat, sans-serif;
+  --font1: 'VT323', sans-serif, monospace;
 }
 
 * {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+font-family: var(--font1);
+}
+
+.login-div {
+  background-color: var(--background-color);
+}
+
+.login-logo {
+  width: 150px;
+  height: 150px;
 }
 
 header {
@@ -26,7 +35,6 @@ header {
 
 main {
   color: var(--primary-color);
-  font-family: montserrat, sans-serif;
   background-color: var(--background-color);
   height: 100vh;
 }
@@ -54,7 +62,7 @@ h1 {
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
-  background-color: var(--tertiary-color);
+  background-color: var(--secondary-color);
 }
 
 /* FORM */
@@ -78,10 +86,17 @@ h1 {
   border-radius: var(--border-radius);
 }
 
+.nav{
+  width: 75vh;
+}
+.nav-item {
+  padding-left:30px;
+  padding-right:30px;
+}
 .navbar-brand {
   position: relative;
   background: url(../public/devnetlogo.jpg);
-  width: 100px;
+  width: 75px;
   left: 15px;
   background-size: contain;
 }
