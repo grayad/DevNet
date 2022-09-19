@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
+import Signup from "../Signup";
 
 import Auth from "../../utils/auth";
 
@@ -73,6 +74,7 @@ const Login = () => {
                   </button>
                 </div>
                 {error && <div>Login failed</div>}
+                <p>Don't have an account? <a href={<Signup></Signup>}>Sign up</a></p>
               </form>
             </div>
           </div>
