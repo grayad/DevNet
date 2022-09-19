@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
 
 // import Auth from "./utils/auth";
 
@@ -10,6 +16,15 @@ import Login from "./components/Login";
 // import Profile from "../pages/Profile";
 // import Login from "../Login";
 
+const httpLink = createHttpLink({
+  uri: "http://localhost:3001/graphql",
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
 function App() {
   // once signup/login page complete
   // get token
@@ -17,10 +32,11 @@ function App() {
   // return <div>{!token ? <Login /> : <Header></Header>}</div>;
 
   return (
-    <div>
-      <Header></Header>
-      <Login></Login>
-    </div>
+    <ApolloProvider client={client}>
+      <div>
+        <Login />
+      </div>
+    </ApolloProvider>
   );
 }
 
