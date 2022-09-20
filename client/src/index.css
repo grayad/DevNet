@@ -29,10 +29,6 @@ header {
   color: var(--secondary-color);
 }
 
-.nav .nav-item .nav-link {
-  color: var(--secondary-color);
-}
-
 main {
   color: var(--primary-color);
   background-color: var(--background-color);
@@ -89,10 +85,7 @@ h1 {
 .nav{
   width: 75vh;
 }
-.nav-item {
-  padding-left:30px;
-  padding-right:30px;
-}
+
 .navbar-brand {
   position: relative;
   background: url(../public/devnetlogo.jpg);
