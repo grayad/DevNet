@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
-// import ConnectionList from '../components/ConnectionList';
+import ConnectionList from '../ConnectionList';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USERS, QUERY_ME } from '../../utils/queries';
@@ -61,13 +61,13 @@ const Profile = (props) => {
       </div>
 
       <div className="flex-row justify-space-between mb-3">
-        {/* <div className="col-12 col-lg-3 mb-3">
+        <div className="col-12 col-lg-3 mb-3">
           <ConnectionList
             username={user.username}
             connectionCount={user.connectionCount}
             connections={user.connections}
           />
-        </div> */}
+        </div>
       </div>
       <div className="mb-3">{!userParam}</div>
     </div>
