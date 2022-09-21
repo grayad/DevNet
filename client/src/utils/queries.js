@@ -41,3 +41,15 @@ export const QUERY_SINGLEUSER = gql`
     }
   }
 `;
+
+export const QUERY_JOBS = gql`
+  query {
+    jobs {
+      _id
+      username
+      email
+      description
+      skills
+    }
+  }
+`;
