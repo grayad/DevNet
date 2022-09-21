@@ -13,9 +13,11 @@ const typeDefs = gql`
     skills: [String]
   }
 
-  input profileInput {
-    title: String
-    bio: String
+  type Job {
+    _id: ID
+    jobTitle: String
+    jobDescription: String
+    companyName: String
     skills: [String]
   }
 
@@ -36,9 +38,9 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     updateUser(title: String, bio: String, skills: [String]): User
     addJob(
-      jobtitle: String!
-      jobdescription: String!
-      companyname: String!
+      jobTitle: String!
+      jobDescription: String!
+      companyName: String!
       skills: [String]
     ): Job
   }
