@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ConnectionList = ({ connectionCount, username, connections }) => {
   if (!connections || !connections.length) {
-    return <p className="bg-dark text-light p-3">{username}, make some friends!</p>;
+    return <p className="bg-dark text-light p-3">{username}, you don't have any connections</p>;
   }
 
   return (
