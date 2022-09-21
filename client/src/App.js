@@ -17,6 +17,7 @@ import NoMatch from "./components/pages/NoMatch";
 // import Developers from "../pages/Developers";
 // import Jobs from "../pages/Jobs";
 // import Profile from "../pages/Profile";
+import AddJob from "./components/pages/AddJob";
 // import Login from "../Login";
 
 const httpLink = createHttpLink({
@@ -42,6 +43,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/addjob" element={<AddJob />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
