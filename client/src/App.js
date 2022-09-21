@@ -15,9 +15,10 @@ import Header from "./components/Header";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import NoMatch from "./components/pages/NoMatch";
-// import Developers from "../pages/Developers";
+import Developers from "./components/pages/Developers";
 // import Jobs from "../pages/Jobs";
 import Profile from  "./components/pages/Profile";
+import AddJob from "./components/pages/AddJob";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -54,6 +55,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/developers" element={<Developers />} />
+            <Route path="/addjob" element={<AddJob />} />
             <Route path="*" element={<NoMatch />} />
             <Route path="/profile">
               <Route path=":username" element={<Profile />} />

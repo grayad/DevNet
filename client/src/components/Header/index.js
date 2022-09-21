@@ -40,6 +40,14 @@ function Header() {
                 >
                   Developers
                 </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  to="/addjob"
+                  style={{ color: "#44d3ff" }}
+                  activeStyle={{ color: "white" }}
+                >
+                  Add Job
+                </Nav.Link>
 
                 {Auth.loggedIn() ? (
                   <>
