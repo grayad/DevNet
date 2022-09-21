@@ -40,39 +40,47 @@ function Header() {
                 >
                   Developers
                 </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/profile"
-                  style={{ color: "#44d3ff" }}
-                  activeStyle={{ color: "white" }}
-                >
-                  Profile
-                </Nav.Link>
 
-                <Nav.Link
-                  style={{ color: "#44d3ff" }}
-                  activeStyle={{ color: "white" }}>
-                  {Auth.loggedIn() ? (
-                    <>
-                      <a href="/login" onClick={logout}>
-                        Logout
-                      </a>
-                    </>
-                  ) : (
-                    <>
-                      <Link
-                        style={{ color: "#44d3ff" }}
-                        activeStyle={{ color: "white" }}
-                        to="/login">Login
-                      </Link>
-                      <Link
-                        style={{ color: "#44d3ff" }}
-                        activeStyle={{ color: "white" }}
-                        to="/signup">Signup
-                      </Link>
-                    </>
-                  )}
-                </Nav.Link>
+                {Auth.loggedIn() ? (
+                  <>
+                    <Nav.Link
+                      as={Link}
+                      to="/profile"
+                      style={{ color: "#44d3ff" }}
+                      activeStyle={{ color: "white" }}
+                    >
+                      Profile
+                    </Nav.Link>
+
+                    <Nav.Link
+                      as={Link}
+                      to="/login"
+                      style={{ color: "#44d3ff" }}
+                      activeStyle={{ color: "white" }}
+                    >
+                      <span onClick={logout}>Logout</span>
+                    </Nav.Link>
+                  </>
+                ) : (
+                  <>
+                    <Nav.Link
+                      as={Link}
+                      to="/login"
+                      style={{ color: "#44d3ff" }}
+                      activeStyle={{ color: "white" }}
+                    >
+                      Login
+                    </Nav.Link>
+
+                    <Nav.Link
+                      as={Link}
+                      to="/signup"
+                      style={{ color: "#44d3ff" }}
+                      activeStyle={{ color: "white" }}
+                    >Signup
+                    </Nav.Link>
+                  </>
+                )}
               </Nav>
             </Navbar.Collapse>
           </Container>

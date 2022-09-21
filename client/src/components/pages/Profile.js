@@ -17,7 +17,7 @@ const Profile = (props) => {
   });
 
   const user = data?.me || data?.user || {};
-  console.log("***", user)
+  // console.log("***", user)
 
   const [userFormData, setuserFormData] = useState({
     bio: user.bio,
@@ -49,9 +49,6 @@ const Profile = (props) => {
       console.error(e);
     }
   };
-
-
-
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -139,8 +136,7 @@ const Profile = (props) => {
 
       {user.username && (
         <>
-          <div className="flex-row justify-space-between mb-3">
-            <div className="col-12 mb-3 col-lg-8">
+          <div className="col-12 col-md-9 mx-auto py-4">
               <div className="card">
                 <h4 className="card-header">Your-Profile</h4>
                 <div className="card-body">
@@ -151,8 +147,7 @@ const Profile = (props) => {
                   <h4>Skills: {user?.skills}</h4>
                 </div>
               </div>
-            </div>
-            <div className="col-12 col-lg-3 mb-3">
+            <div className="col-12 col-lg-12 mb-3">
               <ConnectionList
                 username={user?.username}
                 connectionCount={user?.connectionCount}
