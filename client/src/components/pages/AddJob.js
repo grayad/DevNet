@@ -4,10 +4,7 @@ const Jobform = () => {
 
   return (
     <>
-      <main className="login">
-        <div className="login-div text-center">
-          <img src="/devnetlogo.jpg" alt="logo" className="login-logo" />
-        </div>
+      <main className="addjob">
         <div className="col-12 col-md-6 mx-auto py-4">
           <div className="card">
             <h4 className="card-header">Add a Job</h4>
@@ -29,10 +26,10 @@ const Jobform = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="Your bio"
-                  name="bio"
-                  type="bio"
-                  id="bio"
+                  placeholder="Description"
+                  name="description"
+                  type="description"
+                  id="description"
                 />
                 <input
                   className="form-input"
@@ -41,9 +38,11 @@ const Jobform = () => {
                   type="bio"
                   id="bio"
                 />
-                <button type="submit" className="btn btn-primary btn-dark">
-                    Submit
-                </button>
+                <div class="text-center py-3">
+                  <button type="submit" className="btn btn-primary btn-dark">
+                      Submit
+                  </button>
+                </div>
               </form>
             </div>
           </div>

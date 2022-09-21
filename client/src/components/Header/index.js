@@ -49,6 +49,14 @@ function Header() {
                   Profile
                 </Nav.Link>
                 <Nav.Link
+                  as={Link}
+                  to="/addjob"
+                  style={{ color: "#44d3ff" }}
+                  activeStyle={{ color: "white" }}
+                >
+                  Add Job
+                </Nav.Link>
+                <Nav.Link
                   onClick={logout}
                   style={{ color: "#44d3ff" }}
                   activeStyle={{ color: "white" }}
