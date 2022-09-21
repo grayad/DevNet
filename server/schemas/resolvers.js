@@ -60,6 +60,11 @@ const resolvers = {
       // if no token, user needs to login
       throw new AuthenticationError("Please log in or create an account!");
     },
+    addJob: async (parent, args) => {
+      const job = await Job.create(args);
+
+      return { job };
+    },
   },
 };
 
