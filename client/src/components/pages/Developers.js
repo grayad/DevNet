@@ -14,11 +14,12 @@ const Developers = () => {
   if (!Auth.loggedIn()) {
     return <Navigate to="/login" />;
   }
+  console.log(users);
 
   return (
     <div>
-      <h1 class="text-center">Welcome to the Developer Feed!</h1>
-      <h2 class="text-center">Meet all of the developers on DevNet.</h2>
+      <h1 className="text-center">Welcome to the Developer Feed!</h1>
+      <h2 className="text-center">Meet all of the developers on DevNet.</h2>
       <div className="col-12 col-md-6 mx-auto py-4">
         <div className="card">
           <h3 className="card-header">Developers</h3>
@@ -26,21 +27,25 @@ const Developers = () => {
             {loading ? (
               <div>Loading...</div>
             ) : (
-              <div className="jobs-list">
+              <div className="developers-list">
                 {users
                   .filter((user) => user.type === "Developer")
-                  .map((developer) => (
+                  .map((Developer) => (
                     <div className="card mb-3">
-                      <p className="card-header">{developer.username} </p>
+                      <p className="card-header">{Developer.username} </p>
                       <div className="card-body">
                         <p>
                           Title:{" "}
-                          {developer.title ? developer.title : "No title yet"}
+                          {Developer.title ? Developer.title : "No title yet"}
+                        </p>
+                        <p>
+                          Bio:{" "}
+                          {Developer.bio ? Developer.bio : "No bio yet"}
                         </p>
                         <div className="d-flex align-items-center">
                           <p>Skills:</p>{" "}
-                          {developer.skills
-                            ? developer.skills.map((skill) => (
+                          {Developer.skills
+                            ? Developer.skills.map((skill) => (
                                 <p className="p-1">{skill}</p>
                               ))
                             : "No skills yet"}

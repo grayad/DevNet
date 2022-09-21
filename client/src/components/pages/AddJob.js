@@ -38,7 +38,7 @@ const Jobform = () => {
                   type="bio"
                   id="bio"
                 />
-                <div class="text-center py-3">
+                <div className="text-center py-3">
                   <button type="submit" className="btn btn-primary btn-dark">
                       Submit
                   </button>

@@ -67,6 +67,7 @@ function Header() {
                       activeStyle={{ color: "white" }}
                     >
                       <span onClick={logout}>Logout</span>
+
                     </Nav.Link>
                   </>
                 ) : (

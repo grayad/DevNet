@@ -91,7 +91,7 @@ const Signup = () => {
                   Developer
                 </label>
               </div>
-              <div class="form-check">
+              <div className="form-check">
                 <input
                   className="form-check-input"
                   type="radio"
@@ -104,7 +104,7 @@ const Signup = () => {
                   Company
                 </label>
               </div>
-              <div class="text-center py-3">
+              <div className="text-center py-3">
                 <button type="submit" className="btn btn-primary btn-dark">
                   Submit
                 </button>
