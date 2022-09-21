@@ -13,9 +13,11 @@ const typeDefs = gql`
     skills: [String]
   }
 
-  input profileInput {
-    title: String
-    bio: String
+  type Job {
+    _id: ID
+    jobTitle: String
+    jobDescription: String
+    companyName: String
     skills: [String]
   }
 
@@ -23,6 +25,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
+    jobs: [Job]
   }
 
   type Mutation {
@@ -34,6 +37,12 @@ const typeDefs = gql`
     ): Auth
     login(email: String!, password: String!): Auth
     updateUser(title: String, bio: String, skills: [String]): User
+    addJob(
+      jobTitle: String
+      jobDescription: String
+      companyName: String
+      skills: [String]
+    ): Job
   }
 
   type Auth {
