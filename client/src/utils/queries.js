@@ -7,6 +7,9 @@ export const QUERY_ME = gql`
       username
       email
       type
+      title
+      bio
+      skills
     }
   }
 `;

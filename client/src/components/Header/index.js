@@ -42,19 +42,54 @@ function Header() {
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
-                  to="/profile"
+                  to="/addjob"
                   style={{ color: "#44d3ff" }}
                   activeStyle={{ color: "white" }}
                 >
-                  Profile
+                  Add Job
                 </Nav.Link>
-                <Nav.Link
-                  onClick={logout}
-                  style={{ color: "#44d3ff" }}
-                  activeStyle={{ color: "white" }}
-                >
-                  Logout
-                </Nav.Link>
+
+                {Auth.loggedIn() ? (
+                  <>
+                    <Nav.Link
+                      as={Link}
+                      to="/profile"
+                      style={{ color: "#44d3ff" }}
+                      activeStyle={{ color: "white" }}
+                    >
+                      Profile
+                    </Nav.Link>
+
+                    <Nav.Link
+                      as={Link}
+                      to="/login"
+                      style={{ color: "#44d3ff" }}
+                      activeStyle={{ color: "white" }}
+                    >
+                      <span onClick={logout}>Logout</span>
+
+                    </Nav.Link>
+                  </>
+                ) : (
+                  <>
+                    <Nav.Link
+                      as={Link}
+                      to="/login"
+                      style={{ color: "#44d3ff" }}
+                      activeStyle={{ color: "white" }}
+                    >
+                      Login
+                    </Nav.Link>
+
+                    <Nav.Link
+                      as={Link}
+                      to="/signup"
+                      style={{ color: "#44d3ff" }}
+                      activeStyle={{ color: "white" }}
+                    >Signup
+                    </Nav.Link>
+                  </>
+                )}
               </Nav>
             </Navbar.Collapse>
           </Container>
