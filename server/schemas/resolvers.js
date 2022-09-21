@@ -63,7 +63,7 @@ const resolvers = {
     addJob: async (parent, args) => {
       const job = await Job.create(args);
 
-      return { job };
+      return job;
     },
   },
 };
