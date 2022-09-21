@@ -48,12 +48,30 @@ function Header() {
                 >
                   Profile
                 </Nav.Link>
+
                 <Nav.Link
-                  onClick={logout}
                   style={{ color: "#44d3ff" }}
-                  activeStyle={{ color: "white" }}
-                >
-                  Logout
+                  activeStyle={{ color: "white" }}>
+                  {Auth.loggedIn() ? (
+                    <>
+                      <a href="/login" onClick={logout}>
+                        Logout
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        style={{ color: "#44d3ff" }}
+                        activeStyle={{ color: "white" }}
+                        to="/login">Login
+                      </Link>
+                      <Link
+                        style={{ color: "#44d3ff" }}
+                        activeStyle={{ color: "white" }}
+                        to="/signup">Signup
+                      </Link>
+                    </>
+                  )}
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
