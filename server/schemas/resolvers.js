@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Job } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -19,6 +19,9 @@ const resolvers = {
     },
     user: async (parent, { username }) => {
       return User.findOne({ username }).select("-__v -password");
+    },
+    jobs: async () => {
+      return Job.find().select("-__v");
     },
   },
   Mutation: {
@@ -49,7 +52,7 @@ const resolvers = {
       if (context.user) {
         let updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { title: args.title, bio: args.bio, skills: args.skills},
+          { title: args.title, bio: args.bio, skills: args.skills },
           { new: true }
         );
         return updatedUser;

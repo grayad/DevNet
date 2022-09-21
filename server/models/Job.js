@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema, model } = require("mongoose");
 
 const jobSchema = new Schema({
   jobtitle: {
@@ -10,10 +9,13 @@ const jobSchema = new Schema({
     type: String,
     required: true,
   },
-  companyname:{
+  companyname: {
     type: String,
-    required:true,
+    required: true,
   },
-  skills: []
+  skills: [],
 });
-module.exports = mongoose.model('jobFeed', jobSchema);
+
+const Job = model("Job", jobSchema);
+
+module.exports = Job;
