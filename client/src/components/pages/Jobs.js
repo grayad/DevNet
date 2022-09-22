@@ -28,33 +28,36 @@ const Jobs = () => {
               <div>Loading...</div>
             ) : (
               <div className="jobs-list">
-                {jobs
-                  .map((job) => (
-                    <div className="card mb-3">
-                      <p className="card-header">{job.jobTitle} </p>
-                      <div className="card-body">
-                        <p>
-                          Company Name:{" "}
-                          {job.companyName ? job.companyName : "No company name yet"}
-                        </p>
-                        <p>
-                          Job Description:{" "}
-                          {job.jobDescription ? job.jobDescription : "No job description yet"}
-                        </p>
-                        <div className="d-flex align-items-center">
-                          <p>Required Skills:</p>{" "}
-                          {job.skills
-                            ? job.skills.map((skill) => (
-                                <p className="p-1">{skill}</p>
-                              ))
-                            : "No required skills yet"}
-                        </div>
-                        <div className="d-flex justify-content-end">
-                          <button className="m-2 p-1">Delete Job</button>
-                        </div>
+                {jobs.map((job) => (
+                  <div className="card mb-3">
+                    <p className="card-header">{job.jobTitle} </p>
+                    <div className="card-body">
+                      <p>
+                        Company Name:{" "}
+                        {job.companyName
+                          ? job.companyName
+                          : "No company name yet"}
+                      </p>
+                      <p>
+                        Job Description:{" "}
+                        {job.jobDescription
+                          ? job.jobDescription
+                          : "No job description yet"}
+                      </p>
+                      <div className="d-flex align-items-center">
+                        <p>Required Skills:</p>{" "}
+                        {job.skills
+                          ? job.skills.map((skill) => (
+                              <p className="p-1">{skill},</p>
+                            ))
+                          : "No required skills yet"}
+                      </div>
+                      <div className="d-flex justify-content-end">
+                        <button className="m-2 p-1">Delete Job</button>
                       </div>
                     </div>
-                  ))}
+                  </div>
+                ))}
               </div>
             )}
           </div>
