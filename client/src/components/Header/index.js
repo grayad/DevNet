@@ -26,19 +26,19 @@ function Header() {
               <Nav className="ml-auto">
                 <Nav.Link
                   as={Link}
+                  to="/"
+                  style={{ color: "#44d3ff" }}
+                  activeStyle={{ color: "white" }}
+                >
+                  Developers
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
                   to="/jobs"
                   style={{ color: "#44d3ff" }}
                   activeStyle={{ color: "white" }}
                 >
                   Jobs
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/developers"
-                  style={{ color: "#44d3ff" }}
-                  activeStyle={{ color: "white" }}
-                >
-                  Developers
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
@@ -67,7 +67,6 @@ function Header() {
                       activeStyle={{ color: "white" }}
                     >
                       <span onClick={logout}>Logout</span>
-
                     </Nav.Link>
                   </>
                 ) : (
@@ -86,7 +85,8 @@ function Header() {
                       to="/signup"
                       style={{ color: "#44d3ff" }}
                       activeStyle={{ color: "white" }}
-                    >Signup
+                    >
+                      Signup
                     </Nav.Link>
                   </>
                 )}

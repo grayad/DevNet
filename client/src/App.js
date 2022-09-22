@@ -42,11 +42,6 @@ const client = new ApolloClient({
 
 
 function App() {
-  // once signup/login page complete
-  // get token
-  // const token = Auth.loggedIn() ? Auth.getToken() : null;
-  // return <div>{!token ? <Login /> : <Header></Header>}</div>;
-
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -56,7 +51,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/jobs" element={<Jobs />} />
-            <Route path="/developers" element={<Developers />} />
+            <Route path="/" element={<Developers />} />
             <Route path="/addjob" element={<AddJob />} />
             <Route path="*" element={<NoMatch />} />
             <Route path="/profile">
