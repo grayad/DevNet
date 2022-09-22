@@ -17,7 +17,7 @@ const Jobs = () => {
   console.log(jobs);
 
   return (
-    <div>
+    <main>
       <h1 className="text-center">Welcome to the Job Page!</h1>
       <h2 className="text-center">Find the perfect fit.</h2>
       <div className="col-12 col-md-6 mx-auto py-4">
@@ -63,7 +63,7 @@ const Jobs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
