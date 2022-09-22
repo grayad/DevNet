@@ -2,9 +2,9 @@ import React from 'react';
 
 const NoMatch = () => {
   return (
-    <div>
-      Oops, we couldn't find that page.
-    </div>
+    <main>
+      <h1 class="text-center">Oops, we couldn't find that page.</h1>
+    </main>
   );
 };
 

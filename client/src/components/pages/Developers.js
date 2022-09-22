@@ -17,7 +17,7 @@ const Developers = () => {
   console.log(users);
 
   return (
-    <div>
+    <main>
       <h1 className="text-center">Welcome to the Developer Feed!</h1>
       <h2 className="text-center">Meet all of the developers on DevNet.</h2>
       <div className="col-12 col-md-6 mx-auto py-4">
@@ -62,7 +62,7 @@ const Developers = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

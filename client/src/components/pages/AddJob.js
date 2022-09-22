@@ -49,9 +49,9 @@ const Jobform = () => {
   return (
     <>
       <main className="addjob">
+      <h1 className="text-center">Add a Job</h1>
         <div className="col-12 col-md-6 mx-auto py-4">
           <div className="card">
-            <h4 className="card-header">Add a Job</h4>
             <div className="card-body">
               <form onSubmit={handleFormSubmit}>
                 <input
