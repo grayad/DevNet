@@ -65,6 +65,11 @@ const resolvers = {
 
       return job;
     },
+    removeJob: async (parent, _id) => {
+      const job = await Job.findOneAndDelete(_id)
+
+      return job;
+    }
   },
 };
 
