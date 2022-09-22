@@ -47,3 +47,33 @@ export const UPDATE_USER = gql`
     }
   }
 `;
+
+export const ADD_JOB = gql`
+  mutation addJob(
+    $jobTitle: String
+    $jobDescription: String
+    $companyName: String
+    $skills: [String]
+  ) {
+    addJob(
+      jobTitle: $jobTitle
+      jobDescription: $jobDescription
+      companyName: $companyName
+      skills: $skills
+    ) {
+      _id
+      jobTitle
+      jobDescription
+      companyName
+      skills
+    }
+  }
+`;
+
+export const REMOVE_JOB = gql`
+  mutation RemoveJob($id: ID!) {
+    removeJob(_id: $id) {
+      _id
+    }
+  }
+`;

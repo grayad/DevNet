@@ -43,25 +43,13 @@ export const QUERY_SINGLEUSER = gql`
 `;
 
 export const QUERY_JOBS = gql`
-  query {
-    user {
+  query Jobs {
+    jobs {
       _id
-      username
-      email
-      description
+      jobTitle
+      jobDescription
+      companyName
       skills
     }
   }
 `;
-
-// export const QUERY_JOBSS = gql`
-//   query getJob($jobTitle: String!) {
-//     user(username: $username) {
-//       _id
-//       username
-//       email
-//       description
-//       skills
-//     }
-//   }
-// `;
