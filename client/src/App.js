@@ -16,7 +16,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import NoMatch from "./components/pages/NoMatch";
 import Developers from "./components/pages/Developers";
-// import Jobs from "../pages/Jobs";
+import Jobs from "./components/pages/Jobs";
 import Profile from  "./components/pages/Profile";
 import AddJob from "./components/pages/AddJob";
 
@@ -55,6 +55,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/jobs" element={<Jobs />} />
             <Route path="/developers" element={<Developers />} />
             <Route path="/addjob" element={<AddJob />} />
             <Route path="*" element={<NoMatch />} />

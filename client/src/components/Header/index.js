@@ -26,7 +26,7 @@ function Header() {
               <Nav className="ml-auto">
                 <Nav.Link
                   as={Link}
-                  to="/"
+                  to="/jobs"
                   style={{ color: "#44d3ff" }}
                   activeStyle={{ color: "white" }}
                 >
