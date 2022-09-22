@@ -42,8 +42,8 @@ const typeDefs = gql`
       jobDescription: String
       companyName: String
       skills: [String]
-      removeJob(JobId: ID!): User
-    ): 
+    ): Job
+    removeJob(_id: ID!): Job
   }
 
   type Auth {
