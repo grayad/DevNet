@@ -144,7 +144,7 @@ const Profile = (props) => {
                   <h4>Type: {user?.type}</h4>
                   <h4>Title: {user?.title}</h4>
                   <h4>Bio: {user?.bio}</h4>
-                  <h4>Skills: {user?.skills}</h4>
+                  <h4>Skills: {user?.skills.map((skill) => (<p className="p-1">- {skill}</p>))}</h4>
                 </div>
               </div>
             <div className="col-12 col-lg-12 mb-3">

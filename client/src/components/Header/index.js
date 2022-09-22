@@ -30,15 +30,15 @@ function Header() {
                   style={{ color: "#44d3ff" }}
                   activeStyle={{ color: "white" }}
                 >
-                  Jobs
+                  Developers
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
-                  to="/developers"
+                  to="/jobs"
                   style={{ color: "#44d3ff" }}
                   activeStyle={{ color: "white" }}
                 >
-                  Developers
+                  Jobs
                 </Nav.Link>
                 <Nav.Link
                   as={Link}
@@ -67,7 +67,6 @@ function Header() {
                       activeStyle={{ color: "white" }}
                     >
                       <span onClick={logout}>Logout</span>
-
                     </Nav.Link>
                   </>
                 ) : (
@@ -86,7 +85,8 @@ function Header() {
                       to="/signup"
                       style={{ color: "#44d3ff" }}
                       activeStyle={{ color: "white" }}
-                    >Signup
+                    >
+                      Signup
                     </Nav.Link>
                   </>
                 )}

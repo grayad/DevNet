@@ -16,7 +16,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import NoMatch from "./components/pages/NoMatch";
 import Developers from "./components/pages/Developers";
-// import Jobs from "../pages/Jobs";
+import Jobs from "./components/pages/Jobs";
 import Profile from  "./components/pages/Profile";
 import AddJob from "./components/pages/AddJob";
 
@@ -42,11 +42,6 @@ const client = new ApolloClient({
 
 
 function App() {
-  // once signup/login page complete
-  // get token
-  // const token = Auth.loggedIn() ? Auth.getToken() : null;
-  // return <div>{!token ? <Login /> : <Header></Header>}</div>;
-
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -55,7 +50,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/developers" element={<Developers />} />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/" element={<Developers />} />
             <Route path="/addjob" element={<AddJob />} />
             <Route path="*" element={<NoMatch />} />
             <Route path="/profile">

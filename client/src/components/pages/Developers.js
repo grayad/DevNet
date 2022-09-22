@@ -46,7 +46,7 @@ const Developers = () => {
                           <p>Skills:</p>{" "}
                           {Developer.skills
                             ? Developer.skills.map((skill) => (
-                                <p className="p-1">{skill}</p>
+                                <p className="p-1">{skill},</p>
                               ))
                             : "No skills yet"}
                         </div>
