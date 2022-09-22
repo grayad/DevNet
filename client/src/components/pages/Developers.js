@@ -1,20 +1,30 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USERS } from "../../utils/queries";
+import { ADD_CONNECTION } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
 const Developers = () => {
   // use useQuery hook to make query request for all users
   const { loading, data } = useQuery(QUERY_USERS);
-
+  const [addConnection] = useMutation(ADD_CONNECTION);
   const users = data?.users;
 
   //   if user is not logged in, redirect page to login
   if (!Auth.loggedIn()) {
     return <Navigate to="/login" />;
   }
-  console.log(users);
+
+  const handleClick = async () => {
+    try {
+      await addConnection({
+        variables: { id: users._id },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
     <div>
@@ -52,7 +62,9 @@ const Developers = () => {
                         </div>
                         <div className="d-flex justify-content-end">
                           <button className="m-2 p-1">See Profile</button>
-                          <button className="m-2 p-1">Connect</button>
+                          <button className="m-2 p-1" onClick={handleClick}>
+                            Add Connection
+                          </button>
                         </div>
                       </div>
                     </div>

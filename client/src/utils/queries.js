@@ -10,6 +10,11 @@ export const QUERY_ME = gql`
       title
       bio
       skills
+      connectionCount
+      connections {
+        _id
+        username
+      }
     }
   }
 `;
@@ -24,6 +29,7 @@ export const QUERY_USERS = gql`
       title
       bio
       skills
+      
     }
   }
 `;

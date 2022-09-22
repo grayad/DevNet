@@ -47,3 +47,17 @@ export const UPDATE_USER = gql`
     }
   }
 `;
+
+export const ADD_CONNECTION = gql`
+  mutation addConnection($id: ID!) {
+    addConnection(connectionId: $id) {
+      _id
+      username
+      connectionCount
+      connections {
+        _id
+        username
+      }
+    }
+  }
+`;

@@ -5,13 +5,13 @@ import { Navigate, useParams } from 'react-router-dom';
 import ConnectionList from '../ConnectionList';
 
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_USERS, QUERY_ME } from '../../utils/queries';
-import { ADD_USER, UPDATE_USER } from '../../utils/mutations';
+import { QUERY_USERS, QUERY_ME, QUERY_SINGLEUSER } from '../../utils/queries';
+import { ADD_CONNECTION, UPDATE_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 const Profile = (props) => {
   const { username: userParam } = useParams();
-  const [addUser] = useMutation(ADD_USER);
+  const [addConnection] = useMutation(ADD_CONNECTION);
   const { loading, data } = useQuery(userParam ? QUERY_USERS : QUERY_ME, {
     variables: { username: userParam },
   });
@@ -42,7 +42,7 @@ const Profile = (props) => {
 
   const handleClick = async () => {
     try {
-      await addUser({
+      await addConnection({
         variables: { id: user._id },
       });
     } catch (e) {
@@ -149,9 +149,9 @@ const Profile = (props) => {
               </div>
             <div className="col-12 col-lg-12 mb-3">
               <ConnectionList
-                username={user?.username}
-                connectionCount={user?.connectionCount}
-                connections={user?.connections}
+                username={user.username}
+                connectionCount={user.connectionCount}
+                connections={user.connections}
               />
             </div>
           </div>
