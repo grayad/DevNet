@@ -33,6 +33,12 @@ const userSchema = new Schema(
       maxlength: 280,
     },
     skills: [],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ]
   },
   // set this to use virtual below
   {

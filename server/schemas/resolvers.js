@@ -69,6 +69,19 @@ const resolvers = {
       const job = await Job.findOneAndDelete(_id)
 
       return job;
+    },
+    addConnection: async (parent, { connectionId }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { connections: connectionId } },
+          { new: true }
+        ).populate('connections');
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
     }
   },
 };
