@@ -2,7 +2,7 @@
 
 ### Project Description
 
-DevNet is a fully functioning full stack application that works as a social media platform for developers seeking jobs. DevNet also allows developers and companies to interact as developers can make profiles listing skills and companies can make job posting so developers can see.
+DevNet is a fully functioning full stack application that works as a social media platform for developers seeking jobs. DevNet also allows developers and companies to interact as developers can make profiles, listing skills and companies can make job postings so developers can see.
 
 ### Instalation
 
