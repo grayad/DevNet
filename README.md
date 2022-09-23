@@ -30,6 +30,6 @@ npm i
 
 - Adam Awartani https://github.com/awartani321
 - Ashley Darr https://github.com/dashley2
-- Alexus Grey https://github.com/grayad
+- Alexus Gray https://github.com/grayad
 - Ommar Khawaja https://github.com/ommarkhawaja1
 - Hannah Nicks https://github.com/hlnicks
