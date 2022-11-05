@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-// Do we need to use bcrypt since we will have an auth.js?
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
@@ -9,7 +8,6 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-
     email: {
       type: String,
       required: true,
@@ -32,7 +30,15 @@ const userSchema = new Schema(
       type: String,
       maxlength: 280,
     },
+    // empty array where skill inputs will be pushed
     skills: [],
+    // Array of _id values referencing the User model (self-reference)
+    connections: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
   },
   // set this to use virtual below
   {
@@ -57,7 +63,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+// when a user is queried, the query will also return another field called `skillsCount` with the number of skills the user has
 userSchema.virtual("skillsCount").get(function () {
   return this.skills.length;
 });
