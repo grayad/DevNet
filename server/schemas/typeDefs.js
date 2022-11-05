@@ -11,6 +11,7 @@ const typeDefs = gql`
     title: String
     bio: String
     skills: [String]
+    connections: [User]
   }
 
   type Job {
@@ -37,6 +38,7 @@ const typeDefs = gql`
     ): Auth
     login(email: String!, password: String!): Auth
     updateUser(title: String, bio: String, skills: [String]): User
+    addConnection(connectionId: ID!): User
     addJob(
       jobTitle: String
       jobDescription: String
