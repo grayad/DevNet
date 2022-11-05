@@ -1,7 +1,5 @@
 ### DevNet
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6bb57ce8-79f6-47f5-a8de-b2d84c8daa32/deploy-status)](https://app.netlify.com/sites/devnetsocial/deploys)
-
 ### Project Description
 
 DevNet is a fully functioning full stack application that works as a social media platform for developers seeking jobs. DevNet also allows developers and companies to interact as developers can make profiles, listing skills and companies can make job postings so developers can see.
