@@ -12,6 +12,7 @@ const typeDefs = gql`
     bio: String
     skills: [String]
     connections: [User]
+    connectionCount: int
   }
 
   type Job {
