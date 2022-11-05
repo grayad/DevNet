@@ -68,6 +68,11 @@ userSchema.virtual("skillsCount").get(function () {
   return this.skills.length;
 });
 
+// retrieves length of connections array on query-- # of connections
+userSchema.virtual("connectionCount").get(function () {
+  return this.connections.length;
+});
+
 const User = model("User", userSchema);
 
 module.exports = User;
