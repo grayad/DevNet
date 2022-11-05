@@ -50,7 +50,7 @@ const resolvers = {
     updateUser: async (parent, args, context) => {
       // check for token
       if (context.user) {
-        let updatedUser = await User.findByIdAndUpdate(
+        const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { title: args.title, bio: args.bio, skills: args.skills },
           { new: true }
@@ -60,16 +60,28 @@ const resolvers = {
       // if no token, user needs to login
       throw new AuthenticationError("Please log in or create an account!");
     },
+    addConnection: async (parent, { connectionId }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { connections: connectionId } },
+          { new: true }
+        ).populate("connections");
+
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
     addJob: async (parent, args) => {
       const job = await Job.create(args);
 
       return job;
     },
     removeJob: async (parent, _id) => {
-      const job = await Job.findOneAndDelete(_id)
+      const job = await Job.findOneAndDelete(_id);
 
       return job;
-    }
+    },
   },
 };
 
