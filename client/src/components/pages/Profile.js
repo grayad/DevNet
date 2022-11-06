@@ -5,19 +5,19 @@ import { Navigate, useParams } from 'react-router-dom';
 import ConnectionList from '../ConnectionList';
 
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_USERS, QUERY_ME } from '../../utils/queries';
-import { ADD_USER, UPDATE_USER } from '../../utils/mutations';
+import { QUERY_SINGLEUSER, QUERY_ME } from '../../utils/queries';
+import { ADD_CONNECTION, UPDATE_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
-const Profile = (props) => {
+const Profile = () => {
   const { username: userParam } = useParams();
-  const [addUser] = useMutation(ADD_USER);
-  const { loading, data } = useQuery(userParam ? QUERY_USERS : QUERY_ME, {
+  const [addConnection] = useMutation(ADD_USER);
+  const { loading, data } = useQuery(userParam ? QUERY_SINGLEUSER : QUERY_ME, {
     variables: { username: userParam },
   });
 
   const user = data?.me || data?.user || {};
-  // console.log("***", user)
+  console.log("***", user)
 
   const [userFormData, setuserFormData] = useState({
     bio: user.bio,
@@ -42,7 +42,7 @@ const Profile = (props) => {
 
   const handleClick = async () => {
     try {
-      await addUser({
+      await addConnection({
         variables: { id: user._id },
       });
     } catch (e) {
