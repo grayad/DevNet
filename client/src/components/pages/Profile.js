@@ -1,13 +1,13 @@
 // import React from 'react';
 import React, { useState } from "react";
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams } from "react-router-dom";
 
-import ConnectionList from '../ConnectionList';
+import ConnectionList from "../ConnectionList";
 
-import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_SINGLEUSER, QUERY_ME } from '../../utils/queries';
-import { ADD_CONNECTION, UPDATE_USER } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_SINGLEUSER, QUERY_ME } from "../../utils/queries";
+import { ADD_CONNECTION, UPDATE_USER } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -17,7 +17,7 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
-  console.log("***", user)
+  console.log("***", user);
 
   const [userFormData, setuserFormData] = useState({
     bio: user.bio,
@@ -60,8 +60,6 @@ const Profile = () => {
     });
   };
 
-
-
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -76,13 +74,11 @@ const Profile = () => {
     }
   };
 
-
-
   return (
     <main>
       <div className="flex-row mb-3">
         <h2 className="text-secondary p-3 display-inline-block">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+          Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
 
         {userParam && (
@@ -92,7 +88,39 @@ const Profile = () => {
         )}
       </div>
 
-      <form onSubmit={handleFormSubmit}>
+      {/* profile information */}
+      {user.username && (
+        <>
+          <div className="col-12 col-md-9 mx-auto py-4">
+            <div className="card">
+              <h4 className="card-header">{userParam ? `${user.username}'s ` : "Your "}Profile</h4>
+              <div className="card-body">
+                <h4>Username: {user?.username}</h4>
+                <h4>Type: {user?.type}</h4>
+                <h4>Title: {user?.title}</h4>
+                <h4>Bio: {user?.bio}</h4>
+                <h4>
+                  Skills:{" "}
+                  {user?.skills.map((skill) => (
+                    <p className="p-1">- {skill}</p>
+                  ))}
+                </h4>
+              </div>
+            </div>
+            <div className="col-12 col-lg-12 mb-3">
+              <ConnectionList
+                username={user?.username}
+                connectionCount={user?.connectionCount}
+                connections={user?.connections}
+              />
+            </div>
+          </div>
+          <div className="mb-3">{!userParam}</div>
+        </>
+      )}
+
+      {/* form */}
+      {userParam ? '' : (<form onSubmit={handleFormSubmit}>
         <div className="col-12 col-md-6 mx-auto py-4">
           <div className="card">
             <h4 className="card-header">Update-Profile</h4>
@@ -132,32 +160,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </form>
-
-      {user.username && (
-        <>
-          <div className="col-12 col-md-9 mx-auto py-4">
-              <div className="card">
-                <h4 className="card-header">Your-Profile</h4>
-                <div className="card-body">
-                  <h4>Username: {user?.username}</h4>
-                  <h4>Type: {user?.type}</h4>
-                  <h4>Title: {user?.title}</h4>
-                  <h4>Bio: {user?.bio}</h4>
-                  <h4>Skills: {user?.skills.map((skill) => (<p className="p-1">- {skill}</p>))}</h4>
-                </div>
-              </div>
-            <div className="col-12 col-lg-12 mb-3">
-              <ConnectionList
-                username={user?.username}
-                connectionCount={user?.connectionCount}
-                connections={user?.connections}
-              />
-            </div>
-          </div>
-          <div className="mb-3">{!userParam}</div>
-        </>
-      )}
+      </form>)}
     </main>
   );
 };
