@@ -11,7 +11,7 @@ import Auth from '../../utils/auth';
 
 const Profile = () => {
   const { username: userParam } = useParams();
-  const [addConnection] = useMutation(ADD_USER);
+  const [addConnection] = useMutation(ADD_CONNECTION);
   const { loading, data } = useQuery(userParam ? QUERY_SINGLEUSER : QUERY_ME, {
     variables: { username: userParam },
   });
