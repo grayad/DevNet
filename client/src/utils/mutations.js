@@ -48,6 +48,20 @@ export const UPDATE_USER = gql`
   }
 `;
 
+export const ADD_CONNECTION = gql`
+  mutation addConnection($connectionId: ID!) {
+    addConnection(connectionId: $connectionId) {
+      _id
+      username
+      connectionCount
+      connections {
+        _id
+        username
+      }
+    }
+  }
+`;
+
 export const ADD_JOB = gql`
   mutation addJob(
     $jobTitle: String
