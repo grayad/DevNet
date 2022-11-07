@@ -6,15 +6,14 @@ import Auth from "../../utils/auth";
 
 const Developers = () => {
   // use useQuery hook to make query request for all users
-  const { loading, data } = useQuery(QUERY_USERS);
+  const { loading: usersLoading, data: usersData } = useQuery(QUERY_USERS);
 
-  const users = data?.users;
+  const users = usersData?.users;
 
   //   if user is not logged in, redirect page to login
   if (!Auth.loggedIn()) {
     return <Navigate to="/login" />;
   }
-  console.log(users);
 
   return (
     <main>
@@ -24,7 +23,7 @@ const Developers = () => {
         <div className="card">
           <h3 className="card-header">Developers</h3>
           <div className="card-body">
-            {loading ? (
+            {usersLoading ? (
               <div>Loading...</div>
             ) : (
               <div className="developers-list">
@@ -39,8 +38,7 @@ const Developers = () => {
                           {Developer.title ? Developer.title : "No title yet"}
                         </p>
                         <p>
-                          Bio:{" "}
-                          {Developer.bio ? Developer.bio : "No bio yet"}
+                          Bio: {Developer.bio ? Developer.bio : "No bio yet"}
                         </p>
                         <div className="d-flex align-items-center">
                           <p>Skills:</p>{" "}
@@ -51,7 +49,10 @@ const Developers = () => {
                             : "No skills yet"}
                         </div>
                         <div className="d-flex justify-content-end">
-                          <button className="m-2 p-1">See Profile</button>
+                          {/* wrap button in link to user profile */}
+                          <a href={"/profile/" + Developer.username}>
+                            <button className="m-2 p-1">See Profile</button>
+                          </a>
                           <button className="m-2 p-1">Connect</button>
                         </div>
                       </div>
