@@ -15,7 +15,7 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_USERS = gql`
-  query {
+  query Users{
     users {
       _id
       username
@@ -24,6 +24,11 @@ export const QUERY_USERS = gql`
       title
       bio
       skills
+      connectionCount
+      connections {
+        _id
+        username
+      }
     }
   }
 `;
@@ -38,6 +43,11 @@ export const QUERY_SINGLEUSER = gql`
       title
       bio
       skills
+      connectionCount
+      connections {
+        _id
+        username
+      }
     }
   }
 `;

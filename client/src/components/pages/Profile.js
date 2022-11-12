@@ -17,7 +17,7 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
-  console.log("***", user);
+  console.log("***", user.connectionCount);
 
   const [userFormData, setuserFormData] = useState({
     bio: user.bio,
@@ -43,7 +43,7 @@ const Profile = () => {
   const handleClick = async () => {
     try {
       await addConnection({
-        variables: { id: user._id },
+        variables: { connectionId: user._id },
       });
     } catch (e) {
       console.error(e);
