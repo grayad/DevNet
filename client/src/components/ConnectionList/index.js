@@ -1,11 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-const ConnectionList = ({ connectionCount, username, connections }) => {
+import { useQuery } from "@apollo/client";
+import { QUERY_SINGLEUSER } from "../../utils/queries";
+const ConnectionList = ({ username }) => {
   // connections = connections.toString();
-  console.log(connections);
+  // console.log(connectionCount);
+  const { loading, data } = useQuery( QUERY_SINGLEUSER , {
+    variables: { username: username },
+  });
 
-  if (!connections || !connections.length) {
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  const user = data?.user;
+  const connectionCount = user.connectionCount;
+  const connections = user.connections;
+
+  if (connectionCount < 0) {
     return (
       <p className="bg-dark text-light p-3">
         {username}, you don't have any connections

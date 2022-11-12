@@ -101,8 +101,8 @@ const Profile = () => {
                 <h4>Bio: {user?.bio}</h4>
                 <h4>
                   Skills:{" "}
-                  {user?.skills.map((skill) => (
-                    <p className="p-1">- {skill}</p>
+                  {user?.skills.map((skill, index) => (
+                    <p className="p-1" key={index}>- {skill}</p>
                   ))}
                 </h4>
               </div>
@@ -110,8 +110,8 @@ const Profile = () => {
             <div className="col-12 col-lg-12 mb-3">
               <ConnectionList
                 username={user?.username}
-                connectionCount={user?.connectionCount}
-                connections={user?.connections}
+                // connectionCount={user?.connectionCount}
+                // connections={user?.connections}
               />
             </div>
           </div>
