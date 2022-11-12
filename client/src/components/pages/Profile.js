@@ -110,8 +110,6 @@ const Profile = () => {
             <div className="col-12 col-lg-12 mb-3">
               <ConnectionList
                 username={user?.username}
-                // connectionCount={user?.connectionCount}
-                // connections={user?.connections}
               />
             </div>
           </div>

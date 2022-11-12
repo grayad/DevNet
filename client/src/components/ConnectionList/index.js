@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_SINGLEUSER } from "../../utils/queries";
 const ConnectionList = ({ username }) => {
-  // connections = connections.toString();
-  // console.log(connectionCount);
   const { loading, data } = useQuery( QUERY_SINGLEUSER , {
     variables: { username: username },
   });
