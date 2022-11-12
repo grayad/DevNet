@@ -19,32 +19,17 @@ const Developers = () => {
     return <Navigate to="/login" />;
   }
 
-  // const handleClick = async (userID) => {
-  //   console.log("Button Clicked 1!")
-  //   console.log(userID)
-  //   try {
-  //      await addConnection({
-  //       variables: { id: userID },
-  //     });
-  //     console.log("Button Clicked 2!")
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
-
+  // function on "connect" button click
   const handleClick = async (e) => {
     e.preventDefault();
 
     // get element attribute -- developer id
     let DevId = e.target.getAttribute("dev-id");
 
-    console.log("Button Clicked 1!");
-    console.log(DevId);
     try {
       await addConnection({
-        variables: { id: DevId },
+        variables: { connectionId: DevId },
       });
-      console.log("Button Clicked 2!");
     } catch (err) {
       console.error(err);
     }
