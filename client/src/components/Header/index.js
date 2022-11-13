@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <>
-      <header className="d-flex align-items-center justify-content-between p-1">
+      <header className="d-flex align-items-center justify-content-between p-1 flex-wrap">
         <div className="d-flex align-items-center">
           <img src="/devnetlogo.jpg" alt="logo" className="navbar-brand" />
           <h1 aref="/" className="p-4">

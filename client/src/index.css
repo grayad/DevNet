@@ -41,8 +41,7 @@ h1 {
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid var(--secondary-color);
-  border-radius: var(--secondary-color);
+  border: 10px solid white;
   background-color: var(--tertiary-color);
   color: var(--quaternary-color);
 }
@@ -97,12 +96,6 @@ h1 {
   border-color: indigo;
   color: indigo;
   fill: indigo;
-}
-
-@media (min-width: 768px) {
-  .button-59 {
-    min-width: 100px;
-  }
 }
 
 .connection-buttons a{

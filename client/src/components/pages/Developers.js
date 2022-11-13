@@ -50,7 +50,7 @@ const Developers = () => {
                 {users
                   .filter((user) => user.type === "Developer")
                   .map((Developer) => (
-                    <div className="card mb-3">
+                    <div className="card mb-3" key= {Developer.id}>
                       <p className="card-header">{Developer.username} </p>
                       <div className="card-body">
                         <p>
@@ -64,7 +64,7 @@ const Developers = () => {
                           <p>Skills:</p>{" "}
                           {Developer.skills
                             ? Developer.skills.map((skill) => (
-                                <p className="p-1">{skill},</p>
+                                <p className="p-1" key={skill}>{skill},</p>
                               ))
                             : "No skills yet"}
                         </div>
