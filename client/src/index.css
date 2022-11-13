@@ -24,6 +24,7 @@ font-family: var(--font1);
   height: 125px;
 }
 
+
 header {
   background-color: var(--background-color);
   color: var(--secondary-color);
@@ -60,6 +61,72 @@ h1 {
   font-size: 1.4rem;
   background-color: var(--secondary-color);
 }
+
+/* Developer Page Button CSS */
+.card a {
+  text-decoration: none;
+}
+.button-59 {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--background-color);
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-size: 25px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  min-width: 20px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-59:focus {
+  color: #171e29;
+}
+
+.button-59:hover {
+  border-color: indigo;
+  color: indigo;
+  fill: indigo;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 100px;
+  }
+}
+
+.connection-buttons a{
+  text-decoration: none;
+  color: indigo;
+}
+
+.btn-connection {
+  border: 0;
+  cursor: pointer;
+  background: var(--secondary-color);
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.btn-connection:hover{
+  transform: translateY(-2px);
+}
+
+
+
 
 /* FORM */
 .form-label,

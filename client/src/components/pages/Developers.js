@@ -71,10 +71,10 @@ const Developers = () => {
                         <div className="d-flex justify-content-end">
                           {/* wrap button in link to user profile */}
                           <a href={"/profile/" + Developer.username}>
-                            <button className="m-2 p-1">See Profile</button>
+                            <button className="m-2 p-1 button-59">See Profile</button>
                           </a>
                           <button
-                            className="m-2 p-1"
+                            className="m-2 p-1 button-59"
                             dev-id={Developer._id}
                             onClick={handleClick}
                           >

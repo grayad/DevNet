@@ -28,7 +28,7 @@ function Header() {
                   as={Link}
                   to="/"
                   style={{ color: "#44d3ff" }}
-                  activeStyle={{ color: "white" }}
+                  activestyle={{ color: "white" }}
                 >
                   Developers
                 </Nav.Link>
@@ -36,7 +36,7 @@ function Header() {
                   as={Link}
                   to="/jobs"
                   style={{ color: "#44d3ff" }}
-                  activeStyle={{ color: "white" }}
+                  activestyle={{ color: "white" }}
                 >
                   Jobs
                 </Nav.Link>
@@ -44,7 +44,7 @@ function Header() {
                   as={Link}
                   to="/addjob"
                   style={{ color: "#44d3ff" }}
-                  activeStyle={{ color: "white" }}
+                  activestyle={{ color: "white" }}
                 >
                   Add Job
                 </Nav.Link>
@@ -55,7 +55,7 @@ function Header() {
                       as={Link}
                       to="/profile"
                       style={{ color: "#44d3ff" }}
-                      activeStyle={{ color: "white" }}
+                      activeClassName="active"
                     >
                       Profile
                     </Nav.Link>
@@ -64,7 +64,7 @@ function Header() {
                       as={Link}
                       to="/login"
                       style={{ color: "#44d3ff" }}
-                      activeStyle={{ color: "white" }}
+                      activestyle={{ color: "white" }}
                     >
                       <span onClick={logout}>Logout</span>
                     </Nav.Link>
@@ -75,7 +75,7 @@ function Header() {
                       as={Link}
                       to="/login"
                       style={{ color: "#44d3ff" }}
-                      activeStyle={{ color: "white" }}
+                      activestyle={{ color: "white" }}
                     >
                       Login
                     </Nav.Link>
@@ -84,7 +84,7 @@ function Header() {
                       as={Link}
                       to="/signup"
                       style={{ color: "#44d3ff" }}
-                      activeStyle={{ color: "white" }}
+                      activestyle={{ color: "white" }}
                     >
                       Signup
                     </Nav.Link>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_SINGLEUSER } from "../../utils/queries";
 const ConnectionList = ({ username }) => {
-  const { loading, data } = useQuery( QUERY_SINGLEUSER , {
+  const { loading, data } = useQuery(QUERY_SINGLEUSER, {
     variables: { username: username },
   });
 
@@ -29,13 +29,15 @@ const ConnectionList = ({ username }) => {
         {username}'s {connectionCount}{" "}
         {connectionCount === 1 ? "connection" : "connections"}
       </h5>
-      {connections.map((connection) => (
-        <button className="btn w-100 display-block mb-2" key={connection._id}>
-          <Link to={`/profile/${connection.username}`}>
-            {connection.username}
-          </Link>
-        </button>
-      ))}
+      <div className="connection-buttons">
+        {connections.map((connection) => (
+          <button className="m-2 btn-connection" key={connection._id}>
+            <Link to={`/profile/${connection.username}`}>
+              {connection.username}
+            </Link>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
