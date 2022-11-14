@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USERS } from "../../utils/queries";
 import Auth from "../../utils/auth";
+import { Link } from "react-router-dom";
 import { ADD_CONNECTION } from "../../utils/mutations";
 
 const Developers = () => {
@@ -70,9 +71,9 @@ const Developers = () => {
                         </div>
                         <div className="d-flex justify-content-end">
                           {/* wrap button in link to user profile */}
-                          <a href={"/profile/" + Developer.username}>
+                          <Link to={"/profile/" + Developer.username}>
                             <button className="m-2 p-1 button-59">See Profile</button>
-                          </a>
+                          </Link>
                           <button
                             className="m-2 p-1 button-59"
                             dev-id={Developer._id}
