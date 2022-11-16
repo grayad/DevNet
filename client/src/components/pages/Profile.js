@@ -1,12 +1,12 @@
 // import React from 'react';
-import React, { useState } from "react";
+import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 
 import ConnectionList from "../ConnectionList";
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_SINGLEUSER, QUERY_ME } from "../../utils/queries";
-import { ADD_CONNECTION, UPDATE_USER } from "../../utils/mutations";
+import { ADD_CONNECTION } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 
 const Profile = () => {
@@ -18,14 +18,6 @@ const Profile = () => {
 
   const user = data?.me || data?.user || {};
   console.log("***", user.connectionCount);
-
-  const [userFormData, setuserFormData] = useState({
-    bio: user.bio,
-    skills: user.skills,
-    type: user.type,
-  });
-
-  const [updateUser] = useMutation(UPDATE_USER);
 
   if (!Auth.loggedIn()) {
     return <Navigate to="/login" />;
@@ -45,30 +37,6 @@ const Profile = () => {
       await addConnection({
         variables: { connectionId: user._id },
       });
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setuserFormData({
-      ...userFormData,
-      [name]: value,
-    });
-  };
-
-  // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const { data } = await updateUser({
-        variables: { ...userFormData },
-      });
-      console.log(data);
     } catch (e) {
       console.error(e);
     }
@@ -118,47 +86,9 @@ const Profile = () => {
       )}
 
       {/* form */}
-      {userParam ? '' : (<form onSubmit={handleFormSubmit}>
-        <div className="col-12 col-md-6 mx-auto py-4">
-          <div className="card">
-            <h4 className="card-header">Update-Profile</h4>
-            <div className="card-body">
-              <input
-                className="form-input"
-                placeholder="Your Title"
-                name="title"
-                type="title"
-                id="title"
-                value={userFormData.title}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="Your Bio"
-                name="bio"
-                type="bio"
-                id="bio"
-                value={userFormData.bio}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="Your skills (Ex: HTML, CSS, JavaScript)"
-                name="skills"
-                type="skills"
-                id="skills"
-                value={userFormData.skills}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="text-center py-3">
-              <button type="submit" className="btn btn-primary btn-dark">
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>)}
+      {/* {userParam ? (
+          ""
+        ) : () } */}
     </main>
   );
 };
