@@ -3,6 +3,7 @@ import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 
 import ConnectionList from "../ConnectionList";
+import Modal from "../Modal";
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_SINGLEUSER, QUERY_ME } from "../../utils/queries";
@@ -42,12 +43,18 @@ const Profile = () => {
     }
   };
 
+  const openModal = () => {
+    return <Modal></Modal>
+  }
+
   return (
     <main>
       <div className="flex-row mb-3">
         <h2 className="text-secondary p-3 display-inline-block">
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
+
+        {userParam ? `` : (<button className="btn" onClick={openModal}>Edit Profile</button>)}
 
         {userParam && (
           <button className="btn ml-auto" onClick={handleClick}>
