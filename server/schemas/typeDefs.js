@@ -20,6 +20,7 @@ const typeDefs = gql`
     jobTitle: String
     jobDescription: String
     companyName: String
+    hiringEmail: String
     skills: [String]
   }
 
@@ -44,6 +45,7 @@ const typeDefs = gql`
       jobTitle: String
       jobDescription: String
       companyName: String
+      hiringEmail: String
       skills: [String]
     ): Job
     removeJob(_id: ID!): Job

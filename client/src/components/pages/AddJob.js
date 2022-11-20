@@ -5,6 +5,7 @@ import { ADD_JOB } from "../../utils/mutations";
 const Jobform = () => {
   const [jobFormData, setjobFormData] = useState({
     companyName: "",
+    hiringEmail: "",
     jobTitle: "",
     jobDescription: "",
     skills: "",
@@ -25,6 +26,7 @@ const Jobform = () => {
   const clearFormData = () => {
     setjobFormData({
       companyName: "",
+      hiringEmail: "",
       jobTitle: "",
       jobDescription: "",
       skills: "",
@@ -61,6 +63,15 @@ const Jobform = () => {
                   type="companyName"
                   id="companyName"
                   value={jobFormData.companyName}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Contact Email"
+                  name="hiringEmail"
+                  type="hiringEmail"
+                  id="hiringEmail"
+                  value={jobFormData.hiringEmail}
                   onChange={handleChange}
                 />
                 <input

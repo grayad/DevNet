@@ -13,6 +13,10 @@ const jobSchema = new Schema({
     type: String,
     required: true,
   },
+  hiringEmail: {
+    type: String,
+    required: true,
+  },
   skills: [],
 });
 

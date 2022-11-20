@@ -67,18 +67,21 @@ export const ADD_JOB = gql`
     $jobTitle: String
     $jobDescription: String
     $companyName: String
+    $hiringEmail: String
     $skills: [String]
   ) {
     addJob(
       jobTitle: $jobTitle
       jobDescription: $jobDescription
       companyName: $companyName
+      hiringEmail: $hiringEmail
       skills: $skills
     ) {
       _id
       jobTitle
       jobDescription
       companyName
+      hiringEmail
       skills
     }
   }
