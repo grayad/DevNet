@@ -54,6 +54,9 @@ const Jobs = () => {
                       </div>
                       <div className="d-flex justify-content-end">
                         <button className="m-2 p-1">Delete Job</button>
+                        <a href="mailto:"{...job.hiringEmail}>
+                          <button className="m-2 p-1">Contact</button>
+                        </a>
                       </div>
                     </div>
                   </div>
