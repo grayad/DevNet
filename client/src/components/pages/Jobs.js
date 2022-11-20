@@ -29,7 +29,7 @@ const Jobs = () => {
             ) : (
               <div className="jobs-list">
                 {jobs.map((job) => (
-                  <div className="card mb-3">
+                  <div className="card mb-3" key={job.id}>
                     <p className="card-header">{job.jobTitle} </p>
                     <div className="card-body">
                       <p>
@@ -54,7 +54,7 @@ const Jobs = () => {
                       </div>
                       <div className="d-flex justify-content-end">
                         <button className="m-2 p-1">Delete Job</button>
-                        <a href="mailto:"{...job.hiringEmail}>
+                        <a href={'mailto:'+ job.hiringEmail}>
                           <button className="m-2 p-1">Contact</button>
                         </a>
                       </div>

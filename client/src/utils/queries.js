@@ -59,6 +59,7 @@ export const QUERY_JOBS = gql`
       jobTitle
       jobDescription
       companyName
+      hiringEmail
       skills
     }
   }
